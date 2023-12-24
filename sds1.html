@@ -1,83 +1,410 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-<html>
+<!DOCTYPE html>
+
+<html >
+
+
+
 <head>
-<title>圣诞树</title>
-<meta charset="utf-8" >
-<style>
-html, 
-  body { width: 100%; height: 100%; margin: 0; padding: 0; border: 0; }
-div { margin: 0; padding: 0; border: 0; }
-.nav { 
-		position: absolute; 
-		top: 0; 
-				left: 0; 
-				width: 100%; 
-				height: 27px; 
-				background-color: white; 
-				color: black; 
-				text-align: center; 
-				line-height: 25px;
-			}
- 
-			a { color: black; text-decoration: none; border-bottom: 1px dashed black; }
-			a:hover { border-bottom: 1px solid red; }
- 
-			.previous { float: left; margin-left: 10px; }
-			.next { float: right; margin-right: 10px; }
-			
-			.green { color: green; }
-			.red { color: red; }
- 
-			textarea { width: 100%; height: 100%; border: 0; padding: 0; margin: 0; padding-bottom: 20px; }
-			.block-outer { float: left; width: 22%; height: 100%; padding: 5px; border-left: 1px solid black; margin: 30px 3px 3px 3px; }
-			.block-inner { height: 68%; }
-			.one { border: 0; }
-</style>
-	</head>
-	<body marginwidth="0" marginheight="0">
-	<canvas id="c" height="356" width="446">
-<script>
-			var collapsed = true;
-			function toggle() {
-				var fs = top.document.getElementsByTagName('frameset')[0];
-				var f = fs.getElementsByTagName('frame');
-				if (collapsed) {
-					fs.rows = '250px,*';
-					// enable resizing of frames in firefox/opera
-					fs.noResize = false;
-					f[0].noResize = false;
-					f[1].noResize = false;
-				} else {
-					fs.rows = '30px,*';
-					// disable resizing of frames in firefox/opera
-					fs.noResize = true;
-					f[0].noResize = true;
-					f[1].noResize = true;
-				}
-				collapsed = !collapsed;
-			}
- 
-</script>
-<script>
-			var b = document.body;
-			var c = document.getElementsByTagName('canvas')[0];
-			var a = c.getContext('2d');
-			document.body.clientWidth; // fix bug in chrome.
-</script>
-<script>
-// start of submission //
-M=Math;Q=M.random;J=[];U=16;T=M.sin;E=M.sqrt;
-for(O=k=0;x=z=j=i=k<200;)with(M[k]=k?c.cloneNode(0):c){width=height=k?32:W=446;
-with(getContext('2d'))if(k>10|!k)for(font='60px Impact',
-V='rgba(';I=i*U,fillStyle=k?k==13?V+'205,205,215,.15)':V+(147+I)+','+(k%2?128+I:0)+','+I+',.5)':'#cca',i<7;)
-beginPath(fill(arc(U-i/3,24-i/2,k==13?4-(i++)/2:8-i++,0,M.PI*2,1)));else for(;x=T(i),y=Q()*2-1,D=x*x+y*y,B=E(D-x/.9-1.5*y+1),R=67*(B+1)*(L=k/9+.8)>>1,i++<W;)
-if(D<1)beginPath(strokeStyle=V+R+','+(R+B*L>>0)+',40,.1)'),moveTo(U+x*8,U+y*8),lineTo(U+x*U,U+y*U),stroke();
-for(y=H=k+E(k++)*25,
-R=Q()*W;P=3,j<H;)J[O++]=[x+=T(R)*P+Q()*6-3,y+=Q()*U-8,z+=T(R-11)*P+Q()*6-3,j/H*20+((j+=U)>H&Q()>.8?Q(P=9)*4:0)>>1]}setInterval(function G(m,l){A=T(D-11);
-	if(l)return(m[2]-l[2])*A+(l[0]-m[0])*T(D);a.clearRect(0,0,W,W);J.sort(G);for(i=0;L=J[i++];
-	a.drawImage(M[L[3]+1],207+L[0]*A+L[2]*T(D)>>0,L[1]>>1)){if(i==2e3)a.fillText('Merry Christmas!',U,345);
-	if(!(i%7))a.drawImage(M[13],((157*(i*i)+T(D*5+i*i)*5)%W)>>0,((113*i+(D*i)/60)%(290+i/99))>>0);}D+=.02},1)
-// end of submission //
-</script>
-</body>
-</html>
+
+ <meta charset="UTF-8">
+
+
+
+ <title>圣诞树</title>
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+
+ <style>
+
+  * 
+
+  {
+
+   box-sizing: border-box;
+
+  }
+
+
+
+
+
+  body 
+
+  {
+
+   margin: 0;
+
+   height: 100vh;
+
+   overflow: hidden;
+
+   display: flex;
+
+   align-items: center;
+
+   justify-content: center;
+
+   background: #161616;
+
+   color: #c5a880;
+
+   font-family: sans-serif;
+
+  }
+
+
+
+
+
+  label
+
+  {
+
+   display: inline-block;
+
+   background-color: #161616;
+
+   padding: 16px;
+
+   border-radius: 0.3rem;
+
+   cursor: pointer;
+
+   margin-top: 1rem;
+
+   width: 300px;
+
+   border-radius: 10px;
+
+   border: 1px solid #c5a880;
+
+   text-align: center;
+
+  }
+
+
+
+
+
+  ul 
+
+  {
+
+   list-style-type: none;
+
+   padding: 0;
+
+   margin: 0;
+
+  }
+
+
+
+
+
+  .btn
+
+  {
+
+   background-color: #161616;
+
+   border-radius: 10px;
+
+   color: #c5a880;
+
+   border: 1px solid #c5a880;
+
+   padding: 16px;
+
+   width: 300px;
+
+   margin-bottom: 16px;
+
+   line-height: 1.5;
+
+   cursor: pointer;
+
+  }
+
+  .separator
+
+  {
+
+   font-weight: bold;
+
+   text-align: center;
+
+   width: 300px;
+
+   margin: 16px 0px;
+
+   color: #a07676;
+
+  }
+
+
+
+
+
+  .title 
+
+  {
+
+   color: #a07676;
+
+   font-weight: bold;
+
+   font-size: 1.25rem;
+
+   margin-bottom: 16px;
+
+  }
+
+
+
+
+
+  .text-loading 
+
+  {
+
+   font-size: 2rem;
+
+  }
+
+ </style>
+
+
+
+ <script>
+
+  window.console = window.console || function(t) {};
+
+ </script>
+
+
+
+
+
+
+
+ <script>
+
+  if (document.location.search.match(/type=embed/gi)) {
+
+   window.parent.postMessage("resize", "*");
+
+  }
+
+ </script>
+
+
+
+
+
+</head>
+
+
+
+<body translate="no" >
+
+ <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/build/three.min.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/EffectComposer.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/RenderPass.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/ShaderPass.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/shaders/CopyShader.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+
+
+
+ <div id="overlay">
+
+  <ul>
+
+   <li>请选择音乐</li>
+
+   <li>
+
+    <button id="btnA" type="button">
+
+     Snowflakes Falling Down by Simon Panrucker
+
+    </button>
+
+   </li>
+
+   <li><button id="btnB" type="button">This Christmas by Dott</button></li>
+
+   <li><button id="btnC" type="button">No room at the inn by TRG Banks</button></li>
+
+   <li><button id="btnD" type="button">Jingle Bell Swing by Mark Smeby</button></li>
+
+   <li>或者</li>
+
+   <li>
+
+    <input type="file" id="upload" hidden />
+
+    <label for="upload">Upload File</label>
+
+   </li>
+
+  </ul>
+
+ </div>
+
+
+
+ <script id="rendered-js" >
+
+  const { PI, sin, cos } = Math;
+
+  const TAU = 2 * PI;
+
+
+
+  const map = (value, sMin, sMax, dMin, dMax) => {
+
+   return dMin + (value - sMin) / (sMax - sMin) * (dMax - dMin);
+
+  };
+
+
+
+  const range = (n, m = 0) =>
+
+  Array(n).
+
+  fill(m).
+
+  map((i, j) => i + j);
+
+
+
+  const rand = (max, min = 0) => min + Math.random() * (max - min);
+
+  const randInt = (max, min = 0) => Math.floor(min + Math.random() * (max - min));
+
+  const randChoise = arr => arr[randInt(arr.length)];
+
+  const polar = (ang, r = 1) => [r * cos(ang), r * sin(ang)];
+
+
+
+  let scene, camera, renderer, analyser;
+
+  let step = 0;
+
+  const uniforms = {
+
+   time: { type: "f", value: 0.0 },
+
+   step: { type: "f", value: 0.0 } };
+
+
+
+   const params = {
+
+    exposure: 1,
+
+    bloomStrength: 0.9,
+
+    bloomThreshold: 0,
+
+    bloomRadius: 0.5 };
+
+
+
+    let composer;
+
+
+
+    const fftSize = 2048;
+
+    const totalPoints = 4000;
+
+
+
+    const listener = new THREE.AudioListener();
+
+
+
+    const audio = new THREE.Audio(listener);
+
+
+
+    document.querySelector("input").addEventListener("change", uploadAudio, false);
+
+
+
+    const buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach((button, index) =>
+
+     button.addEventListener("click", () => loadAudio(index)));
+
+
+
+
+
+    function init() {
+
+     const overlay = document.getElementById("overlay");
+
+     overlay.remove();
+
+
+
+     scene = new THREE.Scene();
+
+     renderer = new THREE.WebGLRenderer({ antialias: true });
+
+     renderer.setPixelRatio(window.devicePixelRatio);
+
+     renderer.setSize(window.innerWidth, window.innerHeight);
+
+     document.body.appendChild(renderer.domElement);
+
+
+
+     camera = new THREE.PerspectiveCamera(
+
+      60,
+
+      window.innerWidth / window.innerHeight,
+
+      1,
+
+      1000);
+
+
+
+     camera.position.set(-0.09397456774197047, -2.5597086635726947, 24.420789670889008);
+
+     camera.rotation.set(0.10443543723052419, -0.003827152981119352, 0.0004011488708739715);
+
+
+
+     const format = renderer.capabilities.isWebGL2 ?
+
+     THREE.RedFormat :
+
+     THREE.LuminanceFormat;
+
+
+
+     uniforms.tAudioData = {
+
+      value: new THREE.DataTexture(analyser.data, fftSize / 2, 1, format) };
+
