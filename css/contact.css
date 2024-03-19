@@ -1,0 +1,227 @@
+html,body {
+  overflow: hidden;  height:100%;
+  width:100%;
+  background: #1f242d
+}
+
+.bg {
+  height:100%;
+  width:100%;
+  text-align: center;
+  display: table;
+  position:relative;
+}
+.cont{
+
+	transform: translate(-50%, -50%); /* 居中 */
+	padding: 25px;
+	width: 75%;
+	height: 50%;
+	top: 50%; /* 水平居中 */
+	left: 50%; /* 垂直居中 */
+	position: absolute;
+}
+/* 邮箱模块 */
+.contmail{
+	background: rgba(255, 255, 255, 0.2);
+	width: 200px;
+	height: 300px;
+	margin-left: 15px;
+	border-radius: 5%;
+	position: absolute;
+}
+
+.imge{
+	display: table-cell;
+	width: 200px;
+	height: 120px;
+	margin-top: 30px;
+	vertical-align: middle;
+	text-align: center;
+	}
+.imge img{
+	width: 80px;
+	height: 80px;
+
+	}
+	/*文字*/
+.textmail{
+	height: 50px;
+	width: 60%;
+	line-height: 50px;
+	text-align: center;
+	margin: 0 auto;
+	color: #f17e7e;
+	font-weight: 1000;
+	font-size: 25px;
+}
+.tmail{
+	margin-top: 10px;
+	color: #f17e7e;
+	font-size: 15px;
+	text-align: center;
+}
+.imgh3 h3{
+	color: #f17e7e;align-items: center;
+	
+}
+/* 电话模块 */
+.contiphone{
+	background: rgba(255, 255, 255, 0.2);
+	width: 200px;
+	height: 300px;
+	margin-left: 280px;
+	border-radius: 5%;
+	position: absolute;
+}
+.imgp{
+	display: table-cell;
+	width: 200px;
+	height: 120px;
+	margin-top: 30px;
+	vertical-align: middle;
+	text-align: center;
+	opacity: 0.9;
+	}
+.imgp img{
+	width: 80px;
+	height: 80px;
+} 
+	/*文字*/
+.textphone{
+	height: 50px;
+	width: 60%;
+	line-height: 50px;
+	text-align: center;
+	margin: 0 auto;
+	color: #f17e7e;
+	font-weight: 1000;
+	font-size: 25px;
+}
+.tphone{
+	margin-top: 10px;
+	color: #f17e7e;
+	font-size: 15px;
+	text-align: center;
+}
+/* 微信 */
+.contwechat{
+	background: rgba(255, 255, 255, 0.2);
+	width: 200px;
+	height: 300px;
+	margin-left: 530px;
+	border-radius: 5%;
+	position: absolute;
+}
+.imgw{
+	display: table-cell;
+	width: 200px;
+	height: 120px;
+	margin-top: 30px;
+	vertical-align: middle;
+	text-align: center;
+	opacity: 0.9;
+	}
+.imgw img{
+	width: 80px;
+	height: 80px;
+}
+	/*文字*/
+.textwechat{
+	height: 50px;
+	width: 60%;
+	line-height: 50px;
+	text-align: center;
+	margin: 0 auto;
+	color: #f17e7e;
+	font-weight: 1000;
+	font-size: 25px;
+}
+.twechat{
+	margin-top: 10px;
+	color: #f17e7e;
+	font-size: 15px;
+	text-align: center;
+}
+/* QQ */
+.contqq{
+	background: rgba(255, 255, 255, 0.2);
+	width: 200px;
+	height: 300px;
+	margin-left: 790px;
+	border-radius: 5%;
+	position: absolute;
+}
+.imgq{
+	display: table-cell;
+	width: 200px;
+	height: 120px;
+	margin-top: 30px;
+	vertical-align: middle;
+	text-align: center;
+	opacity: 0.9;
+	}
+.imgq img{
+	width: 80px;
+	height: 80px;
+}
+	/*文字*/
+.textqq{
+	height: 50px;
+	width: 60%;
+	line-height: 50px;
+	text-align: center;
+	margin: 0 auto;
+	color: #f17e7e;
+	font-weight: 1000;
+	font-size: 25px;
+}
+.tqq{
+	margin-top: 10px;
+	color: #f17e7e;
+	font-size: 15px;
+	text-align: center;
+}
+
+.title {
+  display: table-cell;
+  vertical-align: middle;
+  z-index: 999;
+}
+
+.title h2 {
+  color: #fff;
+  font-size: 45px;
+  font-family: "museo-slab";
+}
+
+.title h3 {
+  color: #fff;
+  font-size: 25px;
+  font-family: "museo-sans";
+  font-weight: 300
+}
+
+
+.wrapper canvas {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width:100%;
+}
+
+.canvas {
+  z-index: 1;
+}
+.canvasbg {
+  z-index: -10;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  filter: blur(3px);
+  opacity: 0.6;
+}
+
+
